@@ -14,6 +14,7 @@
   <button type="submit">Szukaj</button>
 </form>
 
+<div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
 <div *ngIf="results">
   <h2>Wyniki:</h2>
   <ul>

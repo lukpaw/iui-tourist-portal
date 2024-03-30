@@ -11,6 +11,7 @@ export class InformationComponent implements OnInit {
   question: string;
   sourceLanguage: string;
   results: string[];
+  errorMessage = '';
 
   constructor(private touristService: TouristService) {
     this.question = '';
@@ -25,7 +26,10 @@ export class InformationComponent implements OnInit {
     this.touristService.getInformation(this.question, this.sourceLanguage)
       .subscribe(response => {
         this.results = response.results;
+        this.errorMessage = '';
       }, error => {
+        this.errorMessage = 'Wystąpił błąd';
+        console.error('Error fetching tourist information:', error);
       });
   }
 }

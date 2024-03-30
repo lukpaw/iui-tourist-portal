@@ -1,0 +1,22 @@
+<h1>Wyszukiwarka informacji</h1>
+
+<form (ngSubmit)="onSubmit()">
+  <label for="question">Zapytanie:</label>
+  <input type="text" id="question" name="question" [(ngModel)]="question">
+
+  <label for="sourceLanguage">Język:</label>
+  <select id="sourceLanguage" name="sourceLanguage" [(ngModel)]="sourceLanguage">
+    <option value="en">Angielski</option>
+    <option value="de">Niemiecki</option>
+    <option value="pl">Polski</option>
+  </select>
+
+  <button type="submit">Szukaj</button>
+</form>
+
+<div *ngIf="results">
+  <h2>Wyniki:</h2>
+  <ul>
+    <li *ngFor="let result of results">{{ result }}</li>
+  </ul>
+</div>

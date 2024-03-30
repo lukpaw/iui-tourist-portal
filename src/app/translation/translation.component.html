@@ -1,0 +1,22 @@
+<div class="translation-container">
+  <h3>Tłumaczenie</h3>
+
+  <form (ngSubmit)="translate()">
+    <label for="text">Tekst:</label>
+    <input type="text" id="text" name="text"  [(ngModel)]="text">
+
+    <label for="targetLanguage">Język:</label>
+    <select id="targetLanguage" [(ngModel)]="sourceLanguage">
+      <option value="en">Angielski</option>
+      <option value="de">Niemiecki</option>
+    </select>
+
+    <button type="submit">Tłumacz</button>
+  </form>
+
+  <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+  <div class="translated-text" *ngIf="translatedText">
+    <h3>Przetłumaczony tekst:</h3>
+    <p>{{ translatedText }}</p>
+  </div>
+</div>

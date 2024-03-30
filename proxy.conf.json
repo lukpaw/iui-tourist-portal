@@ -1,6 +1,10 @@
 {
-  "/api": {
+  "/api/tourist/": {
     "target": "http://localhost:8081",
+    "secure": false
+  },
+  "/api/translator/": {
+    "target": "http://localhost:8082",
     "secure": false
   }
 }

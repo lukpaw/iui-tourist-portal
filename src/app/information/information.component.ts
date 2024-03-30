@@ -28,8 +28,8 @@ export class InformationComponent implements OnInit {
         this.results = response.results;
         this.errorMessage = '';
       }, error => {
-        this.errorMessage = 'Wystąpił błąd';
-        console.error('Error fetching tourist information:', error);
+        this.errorMessage = 'Błąd pobrania informacji';
+        console.error('Błąd pobrania informacji', error);
       });
   }
 }

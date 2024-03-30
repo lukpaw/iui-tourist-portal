@@ -1,19 +1,21 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { InformationResponse } from './information-models';
-import { Observable } from "rxjs";
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {InformationRequest, InformationResponse} from './models';
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TouristService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getInformation(question: string, sourceLanguage: string): Observable<InformationResponse> {
-    return this.http.post<InformationResponse>('/api/tourist/information', {
-      question,
-      sourceLanguage
-    });
+    let request: InformationRequest = {
+      question: question,
+      sourceLanguage: sourceLanguage
+    }
+    return this.http.post<InformationResponse>('/api/tourist/information', request);
   }
 }

@@ -1,4 +1,4 @@
-<h1>Wyszukiwarka informacji</h1>
+<h3>Wyszukiwarka informacji</h3>
 
 <form (ngSubmit)="onSubmit()">
   <label for="question">Zapytanie:</label>
@@ -15,8 +15,8 @@
 </form>
 
 <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
-<div *ngIf="results">
-  <h2>Wyniki:</h2>
+<div *ngIf="results && results.length > 0">
+  <h4>Wyniki:</h4>
   <ul>
     <li *ngFor="let result of results">{{ result }}</li>
   </ul>

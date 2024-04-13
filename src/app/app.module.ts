@@ -50,7 +50,7 @@ export function loggerCallback(logLevel: LogLevel, message: string) {
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
     auth: {
-      clientId: '872147ce-400b-4541-9679-a3d9ee77d665',
+      clientId: '872147ce-400b-4541-9679-a3d9ee77d665', // CHANGE IT
       authority: 'https://login.microsoftonline.com/organizations',
       redirectUri: 'http://localhost:4200/',
     },

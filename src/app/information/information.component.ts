@@ -4,7 +4,7 @@ import {TouristService} from "../services/tourist.service";
 @Component({
   selector: 'app-information',
   templateUrl: './information.component.html',
-  styleUrls: ['./information.component.scss']
+  styleUrls: ['./information.component.css']
 })
 export class InformationComponent implements OnInit {
 

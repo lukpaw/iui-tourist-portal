@@ -1,39 +1,14 @@
-<h2>{{title}}</h2>
-<app-information></app-information>
-<app-translation></app-translation>
+<mat-toolbar color="primary">
+  <a class="title" href="/">{{ title }}</a>
 
-<div class="examples-container">
-  <h3>Przykłady</h3>
+  <div class="toolbar-spacer"></div>
 
-  <table>
-    <thead>
-    <tr>
-      <th>Polski</th>
-      <th>Angielski</th>
-      <th>Niemiecki</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Jakie są muzea?</td>
-      <td>What are the museums?</td>
-      <td>Welche Museen gibt es?</td>
-    </tr>
-    <tr>
-      <td>Jakie są teatry?</td>
-      <td>What are the theaters?</td>
-      <td>Welche Theater gibt es?</td>
-    </tr>
-    <tr>
-      <td>Jakie są galerie sztuki?</td>
-      <td>What are the art galleries?</td>
-      <td>Welche Kunstgalerien gibt es?</td>
-    </tr>
-    <tr>
-      <td>Jakie są baseny?</td>
-      <td>What are the swimming pools?</td>
-      <td>Welche Schwimmbäder gibt es?</td>
-    </tr>
-    </tbody>
-  </table>
+  <a mat-button [routerLink]="['profile']">Profile</a>
+
+  <button mat-raised-button *ngIf="!loginDisplay" (click)="login()">Login</button>
+  <button mat-raised-button *ngIf="loginDisplay" (click)="logout()">Logout</button>
+</mat-toolbar>
+<div class="container">
+  <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
+  <router-outlet *ngIf="!isIframe"></router-outlet>
 </div>

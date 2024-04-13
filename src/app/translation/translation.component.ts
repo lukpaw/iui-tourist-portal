@@ -4,7 +4,7 @@ import {TranslatorService} from "../services/translator.service";
 @Component({
   selector: 'app-translation',
   templateUrl: './translation.component.html',
-  styleUrl: './translation.component.scss'
+  styleUrls: ['./translation.component.css']
 })
 export class TranslationComponent {
   text;

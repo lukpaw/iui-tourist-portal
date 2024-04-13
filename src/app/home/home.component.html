@@ -1,0 +1,49 @@
+<div *ngIf="!loginDisplay">
+    <p class="welcome">Welcome to the MSAL.js v2 Angular Quickstart!</p>
+    <p>This sample demonstrates how to configure MSAL Angular to login, logout, protect a route, and acquire an access token for a protected resource such as the Microsoft Graph.</p>
+    <p>Please sign-in to see your profile information.</p>
+</div>
+
+<div *ngIf="loginDisplay">
+  <p>Login successful!</p>
+  <p>Request your profile information by clicking Profile above.</p>
+
+  <app-information></app-information>
+  <app-translation></app-translation>
+
+  <div class="examples-container">
+    <h3>Przykłady</h3>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Polski</th>
+        <th>Angielski</th>
+        <th>Niemiecki</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Jakie są muzea?</td>
+        <td>What are the museums?</td>
+        <td>Welche Museen gibt es?</td>
+      </tr>
+      <tr>
+        <td>Jakie są teatry?</td>
+        <td>What are the theaters?</td>
+        <td>Welche Theater gibt es?</td>
+      </tr>
+      <tr>
+        <td>Jakie są galerie sztuki?</td>
+        <td>What are the art galleries?</td>
+        <td>Welche Kunstgalerien gibt es?</td>
+      </tr>
+      <tr>
+        <td>Jakie są baseny?</td>
+        <td>What are the swimming pools?</td>
+        <td>Welche Schwimmbäder gibt es?</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
